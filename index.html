@@ -7,26 +7,72 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style/main.css">
     <link rel="stylesheet" href="assets/style/style.css">
     <title>wk3checkpoint</title>
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
-            <a class="navbar-brand" href="#">
-                <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
-                <span class="ml-2">The Tabletop Organizer</span>
-            </a>
-        </nav>
+    <header class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 text-light">
+                <div class="p-3">
+                    <h1>The Tabletop Organizer.</h1>
+                </div>
+            </div>
+            <div class="col-md-6 align-items-center">
+                <div class="card w-50 mt-5">
+                    <div class="card-body">
+                        <h5 class="card-title">Welcome</h5>
+                        <p class="card-text">Let's get started, create a new list by selecting a title and color!</p>
+                        <form onsubmit="app.listsController.createList()">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="title" name="title"
+                                    placeholder="List title.." required minlength="3" maxlength="15">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Pick a color.</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Red</option>
+                                    <option>Yellow</option>
+                                    <option>Green</option>
+                                    <option>Blue</option>
+                                    <option>Purple</option>
+                                </select>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-primary">create</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
     <main class="container">
-        <div id="app"></div>
+        <div class="row">
+            <div id="lists">
+                <div class="col-3 mt-5">
+                    <div class="card listCard" style="width: 18rem;">
+                        <div class="card-header">
+                            Things to do:
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">mow the lawn</li>
+                            <li class="list-group-item">fold laundry</li>
+                            <li class="list-group-item">watch 'Stranger Things'</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
-    <footer class="bg-dark text-light">
-        <div class="text-center">
-            <p><small>Made with love by Codeworks</small></p>
+    <footer class="text-light">
+        <div class="text-right m-3">
+            <p><small>Made with love by Aaron Peet</small></p>
         </div>
     </footer>
 

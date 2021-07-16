@@ -1,1 +1,30 @@
 /* BASIC STYLES HERE */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url("https://images.unsplash.com/photo-1571647520939-45c81309ba91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+    background-position: center;
+    background-size: cover;
+}
+
+main {
+    flex-grow: 1;
+    min-height: 80vh;
+}
+
+header {
+    min-height: 20vh;
+}
+
+h1 {
+    font-size: 150px;
+    text-shadow: 1px 1px rgb(17, 17, 17);
+    font-family: 'Neucha',
+        cursive;
+}
+
+.listCard {
+    height: 300px;
+    width: 200px;
+}
