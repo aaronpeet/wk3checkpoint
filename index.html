@@ -57,18 +57,18 @@
             <div id="lists">
                 <div class="col-3 mt-5">
                     <div class="card listCard" style="width: 18rem;">
-                        <div class="card-header">
-                            Things to do:
+                        <div class="card-header bg-danger text-light d-flex justify-content-around align-items-center">
+                            <h3>Things to do:</h3>
+                            <span class="action" onclick="app.listsController.removeList('${this.id}')">X</span>
                         </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">mow the lawn</li>
-                            <li class="list-group-item">fold laundry</li>
-                            <li class="list-group-item">watch 'Stranger Things'</li>
-                        </ul>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">mow lawn</label>
+
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     </main>
     <footer class="text-light">
         <div class="text-right m-3">
