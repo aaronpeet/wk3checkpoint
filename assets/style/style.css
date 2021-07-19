@@ -10,7 +10,7 @@ body {
 
 main {
     flex-grow: 1;
-    min-height: 80vh;
+    /*min-height: 80vh;*/
 }
 
 header {

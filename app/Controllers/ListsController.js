@@ -31,6 +31,7 @@ export default class ListsController{
     }
 
     destroy(id) {
+        if (window.confirm('Do you really want to delete?'))
         listsService.destroy(id)
     }
 
