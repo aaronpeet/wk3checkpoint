@@ -1,5 +1,6 @@
-
-
+import {ProxyState} from "../AppState.js"
+import List from "../Models/List.js"
+import Item from "../Models/Item.js"
 
  class ListsService{
       createList(rawList) {
@@ -17,4 +18,6 @@
   removeItem(id) {
     ProxyState.items = ProxyState.items.filter(item => item.id != id)
   }
-}
+ }
+
+ export const listsService = new ListsService()
