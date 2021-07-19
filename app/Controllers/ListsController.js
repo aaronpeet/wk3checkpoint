@@ -35,18 +35,19 @@ export default class ListsController{
         listsService.destroy(id)
     }
 
-    addItem(listId) {
+    addItem(event, listId) {
         event.preventDefault()
         let form = event.target
         let rawItem = {
-            listId,
-            name: form.item.value
+            listId: listId,
+            name: form.name.value
         }
         listsService.addItem(rawItem)
         form.reset()
     }
 
     removeItem(id) {
+        if(window.confirm('Do you really want to remove?'))
         listsService.removeItem(id)
     }
 }

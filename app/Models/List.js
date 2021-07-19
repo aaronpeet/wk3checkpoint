@@ -1,4 +1,5 @@
 import { generateId } from "../Utils/GenerateId.js";
+import { ProxyState } from "../AppState.js";
 
 export default class List{
     constructor({ title, color, id= generateId() })
@@ -8,7 +9,7 @@ export default class List{
         this.id = id;
     }
     get Template() {
-        return `   <div class="col-md-3 col-sm-2 mt-3">
+        return /*html*/`   <div class="col-md-3 col-sm-2 mt-3">
                     <div class="card listCard" style="width: 18rem;">
                         <div class="card-header ${this.color == "Orange" ? "bg-warning" : this.color == "Green" ? "bg-success" : this.color == "Blue" ? "bg-primary" : this.color == "Teal" ? "bg-info" : "bg-danger"} text-light d-flex justify-content-around align-items-center">
                             <h3>${this.title}:</h3>
@@ -19,8 +20,8 @@ export default class List{
                                ${this.MyItems}
                           </ul>
                         </div> 
-                        <form onsubmit="app.listsController.addItem(${this.id})">
-                            <input type="text" name="item" placeholder="Add Tasks..." minlength=3 maxlength=50required>
+                        <form onsubmit="app.listsController.addItem(event, '${this.id}')">
+                            <input type="text" name="name" placeholder="Add Tasks..." minlength=3 maxlength=50required>
                             <button type="submit" class="btn btn-outline-success">+</button>
                         </form>
                     </div>
@@ -28,11 +29,12 @@ export default class List{
             `
     }
 
-    //get MyItems() {
-      //  let template = ''
-        //let items = ProxyState.items.filter(item => item.listId === this.id)
-        //items.forEach(i => {
-     //       template += i.Template
-     //   })
-  //  }
+    get MyItems() {
+      let template = ''
+        let items = ProxyState.items.filter(item => item.listId === this.id)
+        items.forEach(item => {
+            template += item.Template
+        })
+        return template
+    }
 }
