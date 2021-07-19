@@ -19,7 +19,7 @@ export default class ListsController{
         loadState()
     }
 
-    createList(event) {
+    createList() {
         event.preventDefault()
         let form = event.target
         let rawList = {

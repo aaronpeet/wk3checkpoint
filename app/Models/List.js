@@ -8,7 +8,7 @@ export default class List{
         this.id = id;
     }
     get Template() {
-        return `   <div class="col-3 mt-5">
+        return `   <div class="col-3 mt-3">
                     <div class="card listCard" style="width: 18rem;">
                         <div class="card-header ${this.color == "Yellow" ? "bg-warning" : this.color == "Green" ? "bg-success" : this.color == "Blue" ? "bg-primary" : this.color == "Teal" ? "bg-info" : "bg-danger"} text-light d-flex justify-content-around align-items-center">
                             <h3>${this.title}:</h3>
